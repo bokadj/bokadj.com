@@ -1,74 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BOKADJ — Official</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="BOKADJ — Богдан Білецький. Мікси, виступи, контакти. Electronic / Club DJ." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
+  <style>
+  :root{
+    --bg:#121225; --card:#1b1b2d; --muted:#bbb; --accent:#ff5a00; --accent2:#00d9ff; --glass:rgba(255,255,255,0.05);
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:Montserrat,system-ui,Segoe UI,Roboto,-apple-system,"Helvetica Neue",Arial;color:#eee;
+    background:linear-gradient(135deg,#0e0f1a,#121225 30%,#0e0f1a);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:20px auto;padding:20px}
+  .site-header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px}
+  .brand .logo{font-weight:800;font-size:36px;letter-spacing:2px;color:var(--accent)}
+  .brand .sub{color:var(--muted);font-weight:500}
+  .nav{display:flex;gap:12px;align-items:center}
+  .nav a{color:var(--accent2);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600;transition:0.18s}
+  .nav a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
+  .menu-btn{display:none;background:transparent;border:0;color:var(--accent2);font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:start}
+  @media (max-width:940px){.grid{grid-template-columns:1fr}.site-header{flex-direction:column;align-items:flex-start}.nav{margin-top:10px}}
+  @media (max-width:760px){.nav{display:none}.menu-btn{display:inline-block}}
+  .card{background:linear-gradient(180deg,var(--card),#151526);padding:18px;border-radius:12px;
+    box-shadow:0 6px 30px rgba(0,0,0,0.6),0 0 15px rgba(0,217,255,0.06);border:1px solid rgba(255,255,255,0.04)}
+  .main-card{margin-bottom:12px}
+  h2{margin:0 0 12px 0;font-size:20px;color:var(--accent2)}
+  .lead{color:var(--muted);margin-top:6px;line-height:1.5}
+  .music-list{display:flex;flex-direction:column;gap:14px;margin-top:12px}
+  .player{border-radius:10px;padding:8px;background:var(--glass);display:block}
+  .muted{color:var(--muted)}
+  .small{font-size:13px}
+  .side{position:sticky;top:28px}
+  .socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .sbtn{display:inline-block;padding:8px 10px;border-radius:8px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));text-decoration:none;color:#fff;font-weight:600;font-size:14px;transition:0.3s}
+  .sbtn:hover{opacity:0.95;transform:translateY(-2px)}
+  .cta{background:var(--accent2);color:#0b0b0b;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+  .meta{margin-top:12px;color:var(--muted);font-size:14px}
+  .video-card .video-placeholder{height:140px;border-radius:8px;background:linear-gradient(90deg, rgba(255,90,0,0.15), rgba(0,217,255,0.08));display:flex;align-items:center;justify-content:center;color:var(--muted);margin-top:10px}
+  .tours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+  @media (max-width:700px){.tours-grid{grid-template-columns:1fr}}
+  .tour{padding:12px;border-radius:8px;background:rgba(255,255,255,0.02);min-height:80px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+  .empty{opacity:0.7}
+  .contact-row{display:flex;gap:10px;align-items:center;justify-content:flex-start}
+  .site-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.04)}
+  .icons-row{display:flex;gap:10px;align-items:center}
+  .social-icon{width:28px;height:28px;opacity:0.95}
+  .arrow{font-size:20px;opacity:0.8}
+  .strong{font-weight:700}
+  .link-card{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:inherit}
+  /* small helpers */
+  .muted.small{opacity:0.95}
+  /* mobile nav panel */
+  .mobile-nav{display:none}
+  @media (max-width:760px){.mobile-nav{display:block}.mobile-nav.open{position:fixed;left:0;right:0;top:0;bottom:0;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.85));padding:80px 20px;z-index:60}.mobile-nav a{display:block;padding:14px 6px;color:#fff;font-size:18px;text-decoration:none}}
+  </style>
 </head>
 <body>
-  <header>
-    <h1>BOKADJ</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">Про мене</a></li>
-        <li><a href="#music">Музика</a></li>
-        <li><a href="#contacts">Контакти</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">BOKADJ</div>
+        <div class="sub">Electronic / Club DJ — Богдан Білецький</div>
+      </div>
 
-  <main>
-    <!-- ===== BIOGRAPHY ===== -->
-    <section id="about" class="card main-card">
-      <h2>Про мене</h2>
-      <p class="lead">
-        Богдан Білецький (Варшава), відомий як <strong>BOKADJ</strong> — легендарний діджей України 🇺🇦 з Івано-Франківська.
-        Свою кар’єру розпочав ще у далеких 2000-х і з того часу став знаковою фігурою на клубній сцені.
-      </p>
-      <p>
-        🎧 За більш ніж 15 років творчості він створив і записав понад <strong>400 міксів та лайвів</strong>, 
-        відзначаючись унікальним почерком та вмінням передавати атмосферу вечора.
-      </p>
-      <p>
-        🔊 <strong>BOKADJ був резидентом культових клубів Західної України — Pyramida та Dinamit.</strong> 
-        Він був гостем на танцполах України та Польщі 🇵🇱, зокрема у клубах <strong>Opera</strong> (Варшава), 
-        <strong>Zło</strong> (Вроцлав) та <strong>2 Progi</strong> (Познань).
-      </p>
-      <p>
-        📻 <strong>Енергетика сетів BOKADJ вийшла далеко за межі клубних стін</strong> — його мікси звучали в ефірі провідних радіостанцій України, 
-        серед яких <strong>Kiss FM</strong> та <strong>Europa Plus</strong>, а також на закордонних хвилях, 
-        збираючи нових слухачів у різних країнах.
-      </p>
-      <p>
-        ✨ <strong>Його улюблені напрямки — House та всі відтінки сучасної електронної культури, 
-        що створюють єдину енергію танцполу.</strong>
-      </p>
-    </section>
+      <nav class="nav" aria-label="Головна навігація">
+        <a href="#music">Музика</a>
+        <a href="#about">Про мене</a>
+        <a href="#tours">Тури</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
 
-    <!-- ===== MUSIC ===== -->
-    <section id="music" class="card">
-      <h2>Музика</h2>
-      <p>Посилання на мікси та платформи:</p>
-      <ul>
-        <li><a href="https://soundcloud.com/bokadj_official" target="_blank">SoundCloud</a></li>
-        <li><a href="https://www.mixcloud.com/BOKADJ" target="_blank">Mixcloud</a></li>
-        <li><a href="https://mixupload.com/u/BOKADJ" target="_blank">Mixupload</a></li>
-        <li><a href="https://www.instagram.com/bokadjofficial" target="_blank">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@bokadjofficial" target="_blank">TikTok</a></li>
-        <li><a href="https://www.facebook.com/bohdanbiletskyj" target="_blank">Facebook</a></li>
-      </ul>
-    </section>
+      <button class="menu-btn" id="menuBtn" aria-label="Відкрити меню">Меню</button>
+    </header>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contacts" class="card">
-      <h2>Контакти</h2>
-      <p>Пишіть на e-mail: <a href="mailto:bokadj@ukr.net">bokadj@ukr.net</a></p>
-    </section>
-  </main>
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true"></nav>
 
-  <footer>
-    <p>© 2025 BOKADJ. All rights reserved.</p>
-  </footer>
+    <main class="grid">
+      <section id="music" class="card main-card">
+        <h2>Музика</h2>
+        <p class="lead">Слухай свіжі мікси та треки — вбудовано прямо з профілів.</p>
+
+        <div class="music-list">
+          <div class="player">
+            <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
+            <div class="muted small">soundcloud.com/bokadj_official</div>
+          </div>
+
+          <div class="player">
+            <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed=%2FBOKADJ%2F" frameborder="0" ></iframe>
+            <div class="muted small">mixcloud.com/BOKADJ</div>
+          </div>
+
+          <a class="player link-card" href="https://mixupload.com/u/BOKADJ" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="strong">Mixupload</div>
+              <div class="muted small">mixupload.com/u/BOKADJ</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+        </div>
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <h3>Онлайн</h3>
+          <p class="muted">Стеж у соцмережах — найшвидші оновлення та кліпи.</p>
+
+          <div class="socials">
+            <a class="sbtn" href="https://soundcloud.com/bokadj_official" target="_blank">SoundCloud</a>
+            <a class="sbtn" href="https://www.mixcloud.com/BOKADJ" target="_blank">Mixcloud</a>
+            <a class="sbtn" href="https://www.instagram.com/bokadjofficial" target="_blank">Instagram</a>
+            <a class="sbtn" href="https://www.facebook.com/bohdanbiletskyj" target="_blank">Facebook</a>
+            <a class="sbtn" href="https://www.tiktok.com/@bokadjofficial" target="_blank">TikTok</a>
+            <a class="sbtn" href="https://mixupload.com/u/BOKADJ" target="_blank">Mixupload</a>
+          </div>
+
+          <div class="meta">
+            <div class="contact-row">
+              <a class="cta" href="mailto:bokadj@ukr.net">Зв'язатися</a>
+              <a class="sbtn" href="/press-kit.zip">Завантажити прес-кит</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card video-card">
+          <h3>Відео</h3>
+          <div class="muted small">@bokadjofficial</div>
+          <div class="video-placeholder">TikTok / Reels (тут вбудуємо відео)</div>
+        </div>
+      </aside>
+
+      <section id="about" class="card main-card">
+        <h2>Про мене</h2>
+        <p class="lead">BOKADJ (Богдан Білецький) — діджей з 2009 року. Був резидентом клубів <strong>Pyramida</strong> та <strong>Dinamit</strong>, виступав у клубах за кордоном, зокрема <strong>Opera (Варшава)</strong>, <strong>Zło (Вроцлав)</strong> та <strong>2Progi (Познань)</strong>. Стиль: <strong>house</strong>, <strong>techno</strong> та суміжні напрями. Мікси транслювалися на радіостанціях, зокрема Kiss FM і Europa Plus.</p>
+      </section>
+
+      <section id="tours" class="card main-card">
+        <h2>Тури / Виступи</h2>
+        <p class="muted">Поки що розкладу немає. Тут з'являться афіші та дати, коли будуть запрошення.</p>
+        <div class="tours-grid" id="toursGrid">
+          <div class="tour empty">Афіша 1<br><span class="muted small">Дата • Локація</span></div>
+          <div class="tour empty">Афіша 2<br><span class="muted small">Дата • Локація</span></div>
+          <div class="tour empty">Афіша 3<br><span class="muted small">Дата • Локація</span></div>
+        </div>
+      </section>
+
+      <section id="contacts" class="card main-card">
+        <h2>Контакти</h2>
+        <p class="muted">Booking / Press: <a href="mailto:bokadj@ukr.net">bokadj@ukr.net</a></p>
+        <p class="muted">Підписники: Instagram / TikTok — найшвидші оновлення</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="muted">© BOKADJ — 2025 • bokadj.com</div>
+      <div class="icons-row">
+        <a href="https://soundcloud.com/bokadj_official" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/soundcloud.svg" alt="sc"></a>
+        <a href="https://www.mixcloud.com/BOKADJ" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mixcloud.svg" alt="mc"></a>
+        <a href="https://www.instagram.com/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="ig"></a>
+        <a href="https://www.facebook.com/bohdanbiletskyj" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="fb"></a>
+        <a href="https://www.tiktok.com/@bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="tt"></a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile menu behavior
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = [{text:'Музика',href:'#music'},{text:'Про мене',href:'#about'},{text:'Тури',href:'#tours'},{text:'Контакти',href:'#contacts'}];
+    function buildMobileNav(){
+      mobileNav.innerHTML = navLinks.map(l=>`<a href="${l.href}" onclick="closeMenu()">${l.text}</a>`).join('');
+    }
+    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); }
+    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); }
+    menuBtn.addEventListener('click',()=>{ if(mobileNav.classList.contains('open')) closeMenu(); else openMenu(); });
+    buildMobileNav();
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+          closeMenu();
+        }
+      })
+    });
+  </script>
 </body>
 </html>
