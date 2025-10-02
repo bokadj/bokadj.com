@@ -1,119 +1,174 @@
-
 <!doctype html>
 <html lang="uk">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>BOKADJ — Official</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{
+      --bg:#0f0f12;
+      --overlay: rgba(0,0,0,0.55);
+      --accent:#ff5a00;
+      --accent2:#00c6ff;
+      --muted:#bdbdbd;
+      --card:#15151a;
+      --maxw:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:linear-gradient(180deg,#0b0b0f,#0f0f12);color:#eee;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:18px}
+    /* ===== Header (hero) ===== */
+    .hero{
+      position:relative;
+      min-height:56vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:26px;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      background-color:#000;
+      background-size:cover;
+      background-position:center;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(90deg, rgba(10,10,10,0.65), rgba(0,0,0,0.4));
+      z-index:1;
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+      text-align:center;
+      padding:40px 20px;
+      max-width:980px;
+    }
+    .hero h1{
+      margin:0;
+      font-size: clamp(36px, 6vw, 64px);
+      letter-spacing:4px;
+      color:var(--accent);
+      text-shadow:0 6px 30px rgba(255,90,0,0.08);
+      font-weight:800;
+    }
+    .hero p.lead{
+      margin:14px 0 18px 0;
+      color:#fff;
+      font-size:clamp(15px, 2vw, 20px);
+      line-height:1.4;
+    }
+    .hero .badges{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .badge{
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
+      color:#fff;
+      padding:8px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 6px 20px rgba(0,0,0,0.45);
+      transition:transform .18s ease;
+    }
+    .badge:hover{transform:translateY(-3px)}
+    .hero .links{margin-top:18px; display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .social-link{
+      color: #fff;
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.03);
+      font-weight:600;
+    }
+    /* ===== Biography block ===== */
+    .bio{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:28px;
+      border-radius:var(--radius);
+      margin-bottom:20px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.5);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .bio h2{margin:0 0 12px 0;color:var(--accent2);font-size:20px}
+    .bio p{margin:10px 0;color:var(--muted);line-height:1.6;font-size:16px}
+    .bio p.highlight{color:#fff}
+    .footer-cta{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:16px}
+    .mailto{
+      background:var(--accent2);
+      color:#071017;
+      padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800;
+    }
+    @media (max-width:820px){
+      .wrap{padding:12px}
+      .hero{min-height:46vh}
+      .hero p.lead{font-size:15px}
+    }
+  </style>
 </head>
 <body>
   <div class="wrap">
-    <header class="site-header">
-      <div class="brand">
-        <div class="logo">BOKADJ</div>
-        <div class="sub">Electronic / Club DJ — Богдан Білецький</div>
+    <!-- ====== HEADER / HERO ====== -->
+    <!-- Заміни images/banner.jpg своїм банером; можна змінити background-image inline або у CSS -->
+    <header class="hero" style="background-image: url('images/banner.jpg');">
+      <div class="hero-content">
+        <h1>BOKADJ</h1>
+        <p class="lead">
+          Легендарний діджей України 🇺🇦 з Івано-Франківська • резидент Pyramida & Dinamit • гостьові сети в Польщі 🇵🇱 • проживає у Варшаві
+        </p>
+
+        <div class="badges">
+          <a class="badge" href="https://soundcloud.com/bokadj_official" target="_blank" rel="noopener">SoundCloud</a>
+          <a class="badge" href="https://www.mixcloud.com/BOKADJ" target="_blank" rel="noopener">Mixcloud</a>
+          <a class="badge" href="https://mixupload.com/u/BOKADJ" target="_blank" rel="noopener">Mixupload</a>
+        </div>
+
+        <div class="links" aria-hidden="false">
+          <a class="social-link" href="https://www.instagram.com/bokadjofficial" target="_blank" rel="noopener">Instagram</a>
+          <a class="social-link" href="https://www.tiktok.com/@bokadjofficial" target="_blank" rel="noopener">TikTok</a>
+          <a class="social-link" href="https://www.facebook.com/bohdanbiletskyj" target="_blank" rel="noopener">Facebook</a>
+        </div>
+
+        <div class="footer-cta">
+          <a class="mailto" href="mailto:bokadj@ukr.net">bokadj@ukr.net</a>
+        </div>
       </div>
-      <nav class="nav">
-        <a href="#music">Музика</a>
-        <a href="#about">Про мене</a>
-        <a href="#tours">Тури</a>
-        <a href="#contacts">Контакти</a>
-      </nav>
     </header>
 
-    <main class="grid">
-      <section id="music" class="card main-card">
-        <h2>Музика</h2>
-        <p class="lead">Слухай свіжі мікси та треки — вбудовано прямо з профілів.</p>
+    <!-- ====== BIOGRAPHY ====== -->
+    <section class="bio" id="about">
+      <h2>Біографія</h2>
 
-        <div class="music-list">
-          <div class="player">
-            <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-            <div class="muted small">soundcloud.com/bokadj_official</div>
-          </div>
+      <p class="highlight">
+        Богдан Білецький — відомий як <strong>BOKADJ</strong> — легендарний діджей України 🇺🇦 з Івано-Франківська.  
+        Свою кар’єру розпочав ще у далеких 2000-х і з того часу став знаковою фігурою на клубній сцені.
+      </p>
 
-          <div class="player">
-            <iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?feed=%2FBOKADJ%2F" frameborder="0" ></iframe>
-            <div class="muted small">mixcloud.com/BOKADJ</div>
-          </div>
+      <p>
+        🎧 За більш ніж 15 років творчості він створив і записав понад <strong>400 міксів та лайвів</strong>, відзначаючись унікальним почерком та вмінням передавати атмосферу вечора.
+      </p>
 
-          <a class="player link-card" href="https://mixupload.com/u/BOKADJ" target="_blank" rel="noopener noreferrer">
-            <div>
-              <div class="strong">Mixupload</div>
-              <div class="muted small">mixupload.com/u/BOKADJ</div>
-            </div>
-            <div class="arrow">→</div>
-          </a>
-        </div>
-      </section>
+      <p>
+        🔊 <strong>BOKADJ був резидентом культових клубів Західної України — Pyramida та Dinamit.</strong>  
+        Він був гостем на танцполах України та Польщі 🇵🇱, зокрема у клубах <strong>Opera</strong> (Варшава), <strong>Zło</strong> (Вроцлав) та <strong>2 Progi</strong> (Познань).
+      </p>
 
-      <aside class="side">
-        <div class="card">
-          <h3>Онлайн</h3>
-          <p class="muted">Стеж у соцмережах — найшвидші оновлення та кліпи.</p>
+      <p>
+        📻 <strong>Енергетика сетів BOKADJ вийшла далеко за межі клубних стін — його мікси звучали в ефірі провідних радіостанцій України, серед яких Kiss FM та Europa Plus, а також на закордонних хвилях, збираючи нових слухачів у різних країнах.</strong>
+      </p>
 
-          <div class="socials">
-            <a class="sbtn" href="https://soundcloud.com/bokadj_official" target="_blank">SoundCloud</a>
-            <a class="sbtn" href="https://www.mixcloud.com/BOKADJ" target="_blank">Mixcloud</a>
-            <a class="sbtn" href="https://www.instagram.com/bokadjofficial" target="_blank">Instagram</a>
-            <a class="sbtn" href="https://www.facebook.com/bohdanbiletskyj" target="_blank">Facebook</a>
-            <a class="sbtn" href="https://www.tiktok.com/@bokadjofficial" target="_blank">TikTok</a>
-            <a class="sbtn" href="https://mixupload.com/u/BOKADJ" target="_blank">Mixupload</a>
-          </div>
+      <p>
+        ✨ <strong>Його улюблені напрямки — House та всі відтінки сучасної електронної культури, що створюють єдину енергію танцполу.</strong>
+      </p>
+    </section>
 
-          <div class="meta">
-            <div class="contact-row">
-              <a class="cta" href="mailto:bokadj@ukr.net">Зв'язатися</a>
-              <a class="sbtn" href="/press-kit.zip">Завантажити прес-кит</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card video-card">
-          <h3>Відео</h3>
-          <div class="muted small">@bokadjofficial</div>
-          <div class="video-placeholder">TikTok / Reels (тут вбудуємо відео)</div>
-        </div>
-      </aside>
-
-      <section id="about" class="card main-card">
-        <h2>Про мене</h2>
-        <p class="lead">BOKADJ (Богдан Білецький) — легендарний діджей України, який розпочав свою кар’єру ще у далеких двохтисячних. 
-        Він був резидентом культових клубів <strong>Pyramida</strong> та <strong>Dinamit</strong>, а також частим гостем клубів Західної України. 
-        За межами України виступав у клубах: <strong>Opera (Варшава)</strong>, <strong>Zło (Вроцлав)</strong>, <strong>2Progi (Познань)</strong>. 
-        Його стиль зосереджений на <strong>house, techno</strong> та всіх відгалуженнях цих жанрів.</p>
-      </section>
-
-      <section id="tours" class="card main-card">
-        <h2>Тури / Виступи</h2>
-        <p class="muted">Поки що розкладу немає. Тут з'являться афіші та дати, коли будуть запрошення.</p>
-        <div class="tours-grid">
-          <div class="tour empty">Афіша 1<br><span class="muted small">Дата • Локація</span></div>
-          <div class="tour empty">Афіша 2<br><span class="muted small">Дата • Локація</span></div>
-          <div class="tour empty">Афіша 3<br><span class="muted small">Дата • Локація</span></div>
-        </div>
-      </section>
-
-      <section id="contacts" class="card main-card">
-        <h2>Контакти</h2>
-        <p class="muted">Booking / Press: <a href="mailto:bokadj@ukr.net">bokadj@ukr.net</a></p>
-        <p class="muted">Підписники: Instagram / TikTok — найшвидші оновлення</p>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="muted">© BOKADJ — 2025 • bokadj.com</div>
-      <div class="icons-row">
-        <a href="https://soundcloud.com/bokadj_official" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/soundcloud.svg" alt="sc"></a>
-        <a href="https://www.mixcloud.com/BOKADJ" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mixcloud.svg" alt="mc"></a>
-        <a href="https://www.instagram.com/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="ig"></a>
-        <a href="https://www.facebook.com/bohdanbiletskyj" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="fb"></a>
-        <a href="https://www.tiktok.com/@bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="tt"></a>
-      </div>
-    </footer>
   </div>
 </body>
 </html>
