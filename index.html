@@ -67,17 +67,15 @@
         <div class="tagline">Electronic Dance Music</div>
       </div>
 
-      <nav class="nav" aria-label="Головна навігація">
+      <nav class="nav">
         <a href="#music">Музика</a>
         <a href="#bio">Біографія</a>
         <a href="#tours">Тури</a>
         <a href="#contacts">Контакти</a>
       </nav>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Відкрити меню">Меню</button>
+      <button class="menu-btn" id="menuBtn">Меню</button>
     </header>
-
-    <nav class="mobile-nav" id="mobileNav" aria-hidden="true"></nav>
 
     <main class="grid">
       <section id="music" class="card main-card">
@@ -108,6 +106,7 @@
             <a class="sbtn" href="https://www.mixcloud.com/BOKADJ" target="_blank">Mixcloud</a>
             <a class="sbtn" href="https://www.instagram.com/bokadjofficial" target="_blank">Instagram</a>
             <a class="sbtn" href="https://www.facebook.com/bohdanbiletskyj" target="_blank">Facebook</a>
+            <a class="sbtn" href="https://t.me/bokadjofficial" target="_blank">Telegram Channel</a>
             <a class="sbtn" href="https://www.tiktok.com/@bokadjofficial" target="_blank">TikTok</a>
           </div>
         </div>
@@ -143,21 +142,10 @@
         </p>
       </section>
 
-      <section id="tours" class="card main-card">
-        <h2>Тури / Виступи</h2>
-        <p class="muted">Скоро тут будуть афіші та дати виступів.</p>
-        <div class="tours-grid" id="toursGrid">
-          <div class="tour empty">TBA<br><span class="muted small">Дата • Локація</span></div>
-          <div class="tour empty">TBA<br><span class="muted small">Дата • Локація</span></div>
-          <div class="tour empty">TBA<br><span class="muted small">Дата • Локація</span></div>
-        </div>
-      </section>
-
       <section id="contacts" class="card main-card">
         <h2>Контакти</h2>
         <p class="muted">Booking / Press: <a href="mailto:bokadj@ukr.net">bokadj@ukr.net</a></p>
-        <p class="muted">Telegram: <a href="https://t.me/bokadj" target="_blank">@bokadj</a></p>
-        <p class="muted">Підписники: Instagram / TikTok — найшвидші оновлення</p>
+        <p class="muted">Telegram (Direct): <a href="https://t.me/bokadj" target="_blank">@bokadj</a></p>
       </section>
     </main>
 
@@ -168,38 +156,35 @@
         <a href="https://www.mixcloud.com/BOKADJ" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mixcloud.svg" alt="mc"></a>
         <a href="https://www.instagram.com/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="ig"></a>
         <a href="https://www.facebook.com/bohdanbiletskyj" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="fb"></a>
+        <a href="https://t.me/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="tg"></a>
         <a href="https://www.tiktok.com/@bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="tt"></a>
-        <a href="https://t.me/bokadj" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="tg"></a>
       </div>
     </footer>
   </div>
 
   <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const navLinks = [
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileNav=document.getElementById('mobileNav');
+    const navLinks=[
       {text:'Музика',href:'#music'},
       {text:'Біографія',href:'#bio'},
       {text:'Тури',href:'#tours'},
       {text:'Контакти',href:'#contacts'}
     ];
-    function buildMobileNav(){
-      mobileNav.innerHTML = navLinks.map(l=>`<a href="${l.href}" onclick="closeMenu()">${l.text}</a>`).join('');
-    }
-    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); }
-    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); }
-    menuBtn.addEventListener('click',()=>{ if(mobileNav.classList.contains('open')) closeMenu(); else openMenu(); });
+    function buildMobileNav(){mobileNav.innerHTML=navLinks.map(l=>`<a href="${l.href}" onclick="closeMenu()">${l.text}</a>`).join('');}
+    function openMenu(){mobileNav.classList.add('open');mobileNav.setAttribute('aria-hidden','false');}
+    function closeMenu(){mobileNav.classList.remove('open');mobileNav.setAttribute('aria-hidden','true');}
+    menuBtn.addEventListener('click',()=>{if(mobileNav.classList.contains('open'))closeMenu();else openMenu();});
     buildMobileNav();
-
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',function(e){
-        const href = this.getAttribute('href');
+        const href=this.getAttribute('href');
         if(href.length>1){
           e.preventDefault();
           document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
           closeMenu();
         }
-      })
+      });
     });
   </script>
 </body>
