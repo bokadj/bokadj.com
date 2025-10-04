@@ -44,10 +44,19 @@
   .cta{background:var(--accent2);color:#0b0b0b;padding:8px 14px;border-radius:12px;text-decoration:none;font-weight:700}
   .meta{margin-top:12px;color:var(--muted);font-size:14px}
   .video-card .video-placeholder{height:160px;border-radius:10px;background:linear-gradient(90deg, rgba(255,90,0,0.15), rgba(0,217,255,0.12));display:flex;align-items:center;justify-content:center;color:var(--muted);margin-top:12px}
+  .tours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  @media (max-width:700px){.tours-grid{grid-template-columns:1fr}}
+  .tour{padding:14px;border-radius:10px;background:rgba(255,255,255,0.04);min-height:90px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+  .empty{opacity:0.7}
   .contact-row{display:flex;gap:12px;align-items:center;justify-content:flex-start}
   .site-footer{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.05)}
   .icons-row{display:flex;gap:12px;align-items:center}
   .social-icon{width:30px;height:30px;opacity:0.95}
+  .arrow{font-size:20px;opacity:0.8}
+  .strong{font-weight:700}
+  .link-card{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:inherit}
+  .mobile-nav{display:none}
+  @media (max-width:760px){.mobile-nav{display:block}.mobile-nav.open{position:fixed;left:0;right:0;top:0;bottom:0;background:linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.9));padding:80px 20px;z-index:60}.mobile-nav a{display:block;padding:16px 6px;color:#fff;font-size:18px;text-decoration:none}}
   </style>
 </head>
 <body>
@@ -58,14 +67,17 @@
         <div class="tagline">Electronic Dance Music</div>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Головна навігація">
         <a href="#music">Музика</a>
         <a href="#bio">Біографія</a>
+        <a href="#tours">Тури</a>
         <a href="#contacts">Контакти</a>
       </nav>
 
-      <button class="menu-btn" id="menuBtn">Меню</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Відкрити меню">Меню</button>
     </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-hidden="true"></nav>
 
     <main class="grid">
       <section id="music" class="card main-card">
@@ -75,7 +87,7 @@
         <div class="music-list">
           <div class="player">
             <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official&color=%23ff5500&auto_play=false"></iframe>
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
             <div class="muted small">soundcloud.com/bokadj_official</div>
           </div>
 
@@ -96,8 +108,8 @@
             <a class="sbtn" href="https://www.mixcloud.com/BOKADJ" target="_blank">Mixcloud</a>
             <a class="sbtn" href="https://www.instagram.com/bokadjofficial" target="_blank">Instagram</a>
             <a class="sbtn" href="https://www.facebook.com/bohdanbiletskyj" target="_blank">Facebook</a>
-            <a class="sbtn" href="https://t.me/bokadjofficial" target="_blank">Telegram Channel</a>
             <a class="sbtn" href="https://www.tiktok.com/@bokadjofficial" target="_blank">TikTok</a>
+            <a class="sbtn" href="https://t.me/bokadjofficial" target="_blank">Telegram Channel</a>
           </div>
         </div>
 
@@ -124,31 +136,64 @@
           <strong>Zło (Вроцлав)</strong> та <strong>2 Progi (Познань)</strong>.
         </p>
         <p class="lead">
-          📻 Його мікси звучали на хвилях <strong>Kiss FM</strong>, <strong>Europa Plus</strong> та інших європейських радіостанцій.
+          📻 Енергетика сетів BOKADJ вийшла далеко за межі клубних стін — його мікси звучали в ефірі провідних радіостанцій України, 
+          серед яких <strong>Kiss FM</strong> та <strong>Europa Plus</strong>, а також на європейських хвилях, 
+          збираючи нових слухачів у різних країнах.
         </p>
         <p class="lead">
-          ✨ Улюблені напрямки — <strong>House</strong>, <strong>Progressive</strong>, <strong>Techno</strong>, <strong>Minimal</strong> та <strong>Dance</strong>.
+          ✨ Його улюблені напрямки — <strong>House</strong> та всі відтінки сучасної електронної культури, 
+          що створюють єдину енергію танцполу.
         </p>
       </section>
 
       <section id="contacts" class="card main-card">
         <h2>Контакти</h2>
         <p class="muted">Booking / Press: <a href="mailto:bokadj@ukr.net">bokadj@ukr.net</a></p>
-        <p class="muted">Telegram (Direct): <a href="https://t.me/bokadj" target="_blank">@bokadj</a></p>
+        <p class="muted">Telegram Channel: <a href="https://t.me/bokadjofficial" target="_blank">@bokadjofficial</a></p>
+        <p class="muted">Telegram (Contact): <a href="https://t.me/bokadj" target="_blank">@bokadj</a></p>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="muted">© BOKADJ — 2025 • bokadj.com</div>
       <div class="icons-row">
-        <a href="https://soundcloud.com/bokadj_official" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/soundcloud.svg"></a>
-        <a href="https://www.mixcloud.com/BOKADJ" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mixcloud.svg"></a>
-        <a href="https://www.instagram.com/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"></a>
-        <a href="https://www.facebook.com/bohdanbiletskyj" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg"></a>
-        <a href="https://t.me/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg"></a>
-        <a href="https://www.tiktok.com/@bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"></a>
+        <a href="https://soundcloud.com/bokadj_official" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/soundcloud.svg" alt="sc"></a>
+        <a href="https://www.mixcloud.com/BOKADJ" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mixcloud.svg" alt="mc"></a>
+        <a href="https://www.instagram.com/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="ig"></a>
+        <a href="https://www.facebook.com/bohdanbiletskyj" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="fb"></a>
+        <a href="https://www.tiktok.com/@bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="tt"></a>
+        <a href="https://t.me/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="tg"></a>
       </div>
     </footer>
   </div>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const navLinks = [
+      {text:'Музика',href:'#music'},
+      {text:'Біографія',href:'#bio'},
+      {text:'Тури',href:'#tours'},
+      {text:'Контакти',href:'#contacts'}
+    ];
+    function buildMobileNav(){
+      mobileNav.innerHTML = navLinks.map(l=>`<a href="${l.href}" onclick="closeMenu()">${l.text}</a>`).join('');
+    }
+    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); }
+    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); }
+    menuBtn.addEventListener('click',()=>{ if(mobileNav.classList.contains('open')) closeMenu(); else openMenu(); });
+    buildMobileNav();
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+          closeMenu();
+        }
+      })
+    });
+  </script>
 </body>
 </html>
