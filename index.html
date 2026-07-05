@@ -1,551 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BOKADJ — Official</title>
-  <meta name="description" content="BOKADJ — Богдан Білецький. Electronic Dance Music DJ. Мікси, виступи, контакти." />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-  :root{
-    --bg:#0c0c1a; --card:#1a1a2e; --muted:#bbb; --accent:#ff5a00; --accent2:#00d9ff; --glass:rgba(255,255,255,0.05);
-    --maxw:1200px;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;font-family:Montserrat,system-ui,Segoe UI,Roboto,-apple-system,"Helvetica Neue",Arial;color:#eee;
-    background:radial-gradient(circle at top left,#0c0c1a,#111129 40%,#0a0a15);-webkit-font-smoothing:antialiased}
-  .wrap{max-width:var(--maxw);margin:20px auto;padding:20px}
-  .site-header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:18px;flex-wrap:wrap}
-  .brand .logo{font-weight:800;font-size:42px;letter-spacing:2px;color:var(--accent);text-shadow:0 0 15px rgba(255,90,0,0.6)}
-  .brand .tagline{font-family:'Orbitron', sans-serif;font-weight:600;font-size:20px;color:var(--accent2);letter-spacing:1.5px;margin-top:6px;text-transform:uppercase}
-  .nav{display:flex;gap:14px;align-items:center}
-  .nav a{color:var(--accent2);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;transition:0.2s}
-  .nav a:hover{background:rgba(255,255,255,0.05);color:var(--accent)}
-  .menu-btn{display:none;background:transparent;border:0;color:var(--accent2);font-weight:700}
-  .grid{display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:start}
-  @media (max-width:940px){.grid{grid-template-columns:1fr}.site-header{flex-direction:column;align-items:flex-start}.nav{margin-top:10px}}
-  @media (max-width:760px){.nav{display:none}.menu-btn{display:inline-block}}
-  .card{background:linear-gradient(180deg,var(--card),#151526);padding:20px;border-radius:14px;
-    box-shadow:0 6px 30px rgba(0,0,0,0.6),0 0 20px rgba(0,217,255,0.08);border:1px solid rgba(255,255,255,0.05)}
-  .main-card{margin-bottom:14px}
-  h2{margin:0 0 12px 0;font-size:22px;color:var(--accent2);text-transform:uppercase;letter-spacing:1px}
-  .lead{color:var(--muted);margin-top:6px;line-height:1.6}
-  .music-list{display:flex;flex-direction:column;gap:16px;margin-top:12px}
-  .player{border-radius:12px;padding:8px;background:var(--glass);display:block}
-  .muted{color:var(--muted)}
-  .small{font-size:13px}
-  .side{position:sticky;top:28px}
-  .socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-  .sbtn{display:inline-block;padding:10px 12px;border-radius:10px;
-    background:linear-gradient(90deg,var(--accent),var(--accent2));text-decoration:none;color:#fff;font-weight:600;font-size:14px;transition:0.3s}
-  .sbtn:hover{opacity:0.9;transform:translateY(-2px)}
-  .meta{margin-top:12px;color:var(--muted);font-size:14px}
-  .video-card .video-placeholder{height:160px;border-radius:10px;background:linear-gradient(90deg, rgba(255,90,0,0.15), rgba(0,217,255,0.12));display:flex;align-items:center;justify-content:center;color:var(--muted);margin-top:12px}
-  .tours-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
-  @media (max-width:700px){.tours-grid{grid-template-columns:1fr}}
-  .tour{padding:14px;border-radius:10px;background:rgba(255,255,255,0.04);min-height:90px;display:flex;align-items:center;justify-content:center;flex-direction:column}
-  .empty{opacity:0.7}
-  .site-footer{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.05)}
-  .icons-row{display:flex;gap:12px;align-items:center}
-  .social-icon{width:30px;height:30px;opacity:0.95}
-  .mobile-nav{display:none}
-  @media (max-width:760px){.mobile-nav{display:block}.mobile-nav.open{position:fixed;left:0;right:0;top:0;bottom:0;background:linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.9));padding:80px 20px;z-index:60}.mobile-nav a{display:block;padding:16px 6px;color:#fff;font-size:18px;text-decoration:none}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BOKADJ | Official Website</title>
+
+<meta name="description" content="Official website of BOKADJ — DJ, producer and electronic music artist.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-  <div class="wrap">
-    <header class="site-header">
-      <div class="brand">
-        <div class="logo">BOKADJ</div>
-        <div class="tagline">Electronic Dance Music</div>
-      </div>
 
-      <nav class="nav" aria-label="Головна навігація">
-        <a href="#music">Музика</a>
-        <a href="#bio">Біографія</a>
-        <a href="#tours">Тури</a>
-        <a href="#contacts">Контакти</a>
-      </nav>
+<header class="hero">
 
-      <button class="menu-btn" id="menuBtn" aria-label="Відкрити меню">Меню</button>
-    </header>
+<div class="hero-content">
 
-    <nav class="mobile-nav" id="mobileNav" aria-hidden="true"></nav>
+<div class="hero-left">
 
-    <main class="grid">
-      <section id="music" class="card main-card">
-        <h2>Музика</h2>
-        <p class="lead">Слухай свіжі мікси та треки — вбудовано прямо з профілів.</p>
+<h1>BOKADJ</h1>
 
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-052-live_nightclub&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-051-live_nightclub&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-050-live_nightclub&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-049-live_nightclub&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-048-live-nightclub&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-047-this-is-club-020&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-         <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-046-this-is-club-019&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-045-radio-show-dance&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-044-spring&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-043-radio-show-fanzone&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-        <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-042-this-is-club-018&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-         <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-041-radio-show-fanzone&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-040-radio-show-fanzone&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-039-radio-show-fanzone&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-           <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-038-radio-show-rafinad&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-037-radio-show-mood-of&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-           <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-036-this-is-club-017&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-035-this-is-club-016&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-034-this-is-club-015&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-033-this-is-club-014&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-032-this-is-club-013&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-031-this-is-club-012-retro-80s-90s-2011&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-030-this-is-club-011-retro-80-90x-2011&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-028-this-is-club-010-2011&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-028-live_nightclub-dinamit-ukraine-full-set-2014-01-05&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-027-live_nightclub-dinamit-ukraine-primetime-set-2014-01-04&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-026-live_nightclub-dinamit-ukraine-opening-party-2014-01-04&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-             <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-025-live_nightclub-dinamit-ukraine-primetime-party-2013-12-29&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/bokadj-episode-024&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-023-livenightclub-dinamit-ukraine-endstage-party-2013-12-28&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-022-live_nightclub-dinamit-ukraine-primetime-party-2013-12-28&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-021-live_nightclub-dinamit-ukraine-opening-party-2013-12-28&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-020-live_nightclub-dinamit-ukraine-endstage-party-2013-12-27&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/bokadj-episode-019&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-018-live_nightclub-dinamit-ukraine-opening-party-2013-12-27&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-017-this-is-club-009&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/this-is-club-008-2011&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/bokadj-this-is-club-007-2011&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-           <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/episode-014-this-is-club-006-2011&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/this-is-club-005-2011-house&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/ibiza-2011-house&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/this-is-november-2010-progressivehouse&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/this-is-club-004-2010-house&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/this-is-club-003-2010-house&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="music-list">
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/this-is-club-002-2010-house-music&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
-
-          <div class="player">
-  <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/bokadj-this-is-club-001-2010&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-  </iframe>
-  <div class="muted small">soundcloud.com/bokadj_official</div>
 </div>
 
-          <div class="player">
-  <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/the-bit-2010-drumbass&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-  </iframe>
-  <div class="muted small">soundcloud.com/bokadj_official</div>
+<div class="hero-right">
+
+<img src="images/hero.webp" alt="BOKADJ">
+
 </div>
 
-          <div class="player">
-  <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/girls-club-2010-house-electrohouse&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-  </iframe>
-  <div class="muted small">soundcloud.com/bokadj_official</div>
 </div>
 
-          <div class="player">
-  <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/bokadj-superstar-2010&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-  </iframe>
-  <div class="muted small">soundcloud.com/bokadj_official</div>
+<div class="scroll-down">
+
+↓
+
 </div>
 
-          <div class="player">
-  <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/pop-top-dance-2010-clubhouse&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-  </iframe>
-  <div class="muted small">soundcloud.com/bokadj_official</div>
+</header>
+
+<section class="latest">
+
+<div class="container">
+
+<h2>Latest Mixes</h2>
+
+<div class="mix-grid">
+
+<a href="https://soundcloud.com/bokadj_official/episode-047-this-is-club-020"
+target="_blank"
+class="mix-card">
+
+<div class="mix-title">
+
+THIS IS CLUB #020
+
 </div>
 
-          <div class="player">
-  <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/bokadj-touch-music-2010-house&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-  </iframe>
-  <div class="muted small">soundcloud.com/bokadj_official</div>
+<div class="mix-arrow">
+
+Listen →
+
 </div>
 
-          <div class="player">
-  <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/bokadj-live-nightslub-piramida&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
-  </iframe>
-  <div class="muted small">soundcloud.com/bokadj_official</div>
+</a>
+
+<a href="https://soundcloud.com/bokadj_official/episode-046-this-is-club-019"
+target="_blank"
+class="mix-card">
+
+<div class="mix-title">
+
+THIS IS CLUB #019
+
 </div>
 
-  <div class="player">
-    <iframe width="100%" height="140" scrolling="no" frameborder="no" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/bokadj_official/bokadj-lodzpl-2019&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"></iframe>
-    <div class="muted small">soundcloud.com/bokadj_official</div>
-  </div>
+<div class="mix-arrow">
+
+Listen →
+
 </div>
-      </section>
 
-      <aside class="side">
-        <div class="card">
-          <h3>Онлайн</h3>
-          <p class="muted">Стеж у соцмережах — тут найшвидші оновлення.</p>
+</a>
 
-          <div class="socials">
-            <a class="sbtn" href="https://soundcloud.com/bokadj_official" target="_blank">SoundCloud</a>
-            <a class="sbtn" href="https://www.mixcloud.com/BOKADJ" target="_blank">Mixcloud</a>
-            <a class="sbtn" href="https://www.instagram.com/bokadjofficial" target="_blank">Instagram</a>
-            <a class="sbtn" href="https://www.facebook.com/bohdanbiletskyj" target="_blank">Facebook</a>
-            <a class="sbtn" href="https://www.tiktok.com/@bokadjofficial" target="_blank">TikTok</a>
-            <a class="sbtn" href="https://t.me/bokadjofficial" target="_blank">Telegram Channel</a>
-          </div>
-        </div>
+<a href="https://soundcloud.com/bokadj_official/episode-045-radio-show-dance"
+target="_blank"
+class="mix-card">
 
-        <div class="card video-card">
-          <h3>Відео</h3>
-          <div class="muted small">@bokadjofficial</div>
-          <div class="video-placeholder">TikTok / YouTube</div>
-        </div>
-      </aside>
+<div class="mix-title">
 
-      <section id="bio" class="card main-card">
-        <h2>Біографія</h2>
-        <p class="lead">
-          Богдан Білецький (Варшава), відомий як <strong>BOKADJ</strong> — легендарний діджей України 🇺🇦 з Івано-Франківська. 
-          Свою кар’єру розпочав ще у далеких 2000-х і з того часу став знаковою фігурою на клубній сцені.
-        </p>
-        <p class="lead">
-          🎧 За більш ніж 15 років творчості він створив і записав понад <strong>400 міксів та лайвів</strong>, 
-          відзначаючись унікальним почерком та вмінням передавати атмосферу вечора.
-        </p>
-        <p class="lead">
-          🔊 BOKADJ був резидентом культових клубів Західної України — <strong>Pyramida</strong> та <strong>Dinamit</strong>. 
-          Він виступав на танцполах України та Польщі 🇵🇱, зокрема у клубах <strong>Opera (Варшава)</strong>, 
-          <strong>Zło (Вроцлав)</strong> та <strong>2 Progi (Познань)</strong>.
-        </p>
-        <p class="lead">
-          📻 Енергетика сетів BOKADJ вийшла далеко за межі клубних стін — його мікси звучали в ефірі провідних радіостанцій України, 
-          серед яких <strong>Kiss FM</strong> та <strong>Europa Plus</strong>, а також на європейських хвилях.
-        </p>
-        <p class="lead">
-          ✨ Його улюблені напрямки — <strong>House</strong>, навколо якого немає меж. Це світ без рамок, де кожен звук народжується з емоції, кожен ритм веде далі, а музика стає чистою енергією ночі.
-        </p>
-      </section>
+RADIO SHOW DANCE CLUB
 
-      <section id="tours" class="card main-card">
-        <h2>Тури / Виступи</h2>
-        <p class="muted">Скоро тут будуть афіші та дати виступів.</p>
-        <div class="tours-grid" id="toursGrid">
-          <div class="tour empty">TBA<br><span class="muted small">Дата • Локація</span></div>
-          <div class="tour empty">TBA<br><span class="muted small">Дата • Локація</span></div>
-          <div class="tour empty">TBA<br><span class="muted small">Дата • Локація</span></div>
-        </div>
-      </section>
+</div>
 
-      <section id="contacts" class="card main-card">
-        <h2>Контакти</h2>
-        <p class="muted">Telegram channel! Subscribe, share, and stay updated: <a href="https://t.me/bokadjofficial" target="_blank">bokadjofficial</a></p>
-        <p class="muted">Booking / Press: <a href="mailto:bokadj@ukr.net">bokadj@ukr.net</a></p>
-      </section>
-    </main>
+<div class="mix-arrow">
 
-    <footer class="site-footer">
-      <div class="muted">© BOKADJ — 2025 • bokadj.com</div>
-      <div class="icons-row">
-        <a href="https://soundcloud.com/bokadj_official" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/soundcloud.svg" alt="sc"></a>
-        <a href="https://www.mixcloud.com/BOKADJ" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mixcloud.svg" alt="mc"></a>
-        <a href="https://www.instagram.com/bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="ig"></a>
-        <a href="https://www.facebook.com/bohdanbiletskyj" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="fb"></a>
-        <a href="https://t.me/bokadj" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="tg"></a>
-        <a href="https://www.tiktok.com/@bokadjofficial" target="_blank"><img class="social-icon" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="tt"></a>
-      </div>
-    </footer>
-  </div>
+Listen →
 
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const navLinks = [
-      {text:'Музика',href:'#music'},
-      {text:'Біографія',href:'#bio'},
-      {text:'Тури',href:'#tours'},
-      {text:'Контакти',href:'#contacts'}
-    ];
-    function buildMobileNav(){
-      mobileNav.innerHTML = navLinks.map(l=>`<a href="${l.href}" onclick="closeMenu()">${l.text}</a>`).join('');
-    }
-    function openMenu(){ mobileNav.classList.add('open'); mobileNav.setAttribute('aria-hidden','false'); }
-    function closeMenu(){ mobileNav.classList.remove('open'); mobileNav.setAttribute('aria-hidden','true'); }
-    menuBtn.addEventListener('click',()=>{ if(mobileNav.classList.contains('open')) closeMenu(); else openMenu(); });
-    buildMobileNav();
+</div>
 
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',function(e){
-        const href = this.getAttribute('href');
-        if(href.length>1){
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
-          closeMenu();
-        }
-      })
-    });
-  </script>
-</body>
-</html>
+</a>
+
+</div>
+
+</div>
+
+</section>
