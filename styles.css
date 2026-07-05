@@ -50,3 +50,69 @@
 .about-text{
     margin-top:30px;
 }
+
+
+/* ===========================
+   LISTEN
+=========================== */
+
+.listen{
+    padding:140px 0;
+    border-top:1px solid var(--line);
+}
+
+.listen h2{
+    font-size:14px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:60px;
+}
+
+.listen-grid{
+    display:flex;
+    flex-direction:column;
+}
+
+.listen-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:34px 0;
+    border-bottom:1px solid var(--line);
+    transition:.35s ease;
+}
+
+.listen-card:hover{
+    transform:translateX(10px);
+    border-bottom-color:#4a4a4a;
+}
+
+.listen-name{
+    font-size:32px;
+    font-weight:600;
+    letter-spacing:-1px;
+}
+
+.listen-arrow{
+    font-size:28px;
+    color:var(--muted);
+    transition:.35s;
+}
+
+.listen-card:hover .listen-arrow{
+    color:#fff;
+    transform:translateX(8px);
+}
+
+@media(max-width:700px){
+
+.listen-name{
+    font-size:20px;
+}
+
+.listen-card{
+    padding:26px 0;
+}
+
+}
