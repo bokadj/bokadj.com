@@ -116,3 +116,84 @@
 }
 
 }
+
+/* ===========================
+   CONNECT
+=========================== */
+
+.connect{
+    padding:140px 0;
+    border-top:1px solid var(--line);
+}
+
+.connect h2{
+    font-size:14px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:60px;
+}
+
+.connect-grid{
+    display:flex;
+    flex-direction:column;
+}
+
+.connect-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:34px 0;
+    border-bottom:1px solid var(--line);
+    transition:.35s ease;
+}
+
+.connect-card:hover{
+    transform:translateX(10px);
+    border-bottom-color:#4a4a4a;
+}
+
+.connect-name{
+    font-size:32px;
+    font-weight:600;
+    letter-spacing:-1px;
+}
+
+.connect-arrow{
+    font-size:28px;
+    color:var(--muted);
+    transition:.35s;
+}
+
+.connect-card:hover .connect-arrow{
+    color:#fff;
+    transform:translateX(8px);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+    padding:50px 0;
+    border-top:1px solid var(--line);
+}
+
+.footer p{
+    color:#666;
+    font-size:14px;
+    text-align:center;
+    letter-spacing:2px;
+}
+
+@media(max-width:700px){
+
+.connect-name{
+    font-size:20px;
+}
+
+.connect-card{
+    padding:26px 0;
+}
+
+}
